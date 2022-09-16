@@ -8,8 +8,7 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 
 const Profile = () => {
-  const imgdata =
-    "https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg";
+  const imgdata ="https://png.pngtree.com/png-clipart/20190924/original/pngtree-user-vector-avatar-png-image_4830521.jpg";
 
   const profile = [{ id: 1, name: "Santoshi Patidar", image: imgdata }];
   const [data, setData] = useState([...profile]);
@@ -61,8 +60,10 @@ const Profile = () => {
   const filtered = !search
     ? data
     : data.filter((data) => data.name.toLowerCase().includes(search));
+    
 
   localStorage.setItem("userinfo", JSON.stringify(filtered));
+
   const getuser = JSON.parse(localStorage.getItem("userinfo"));
 
   const userinfo = (id) => {
